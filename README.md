@@ -24,7 +24,7 @@ Ecoassistente is a Brazilian biome guide powered by Gemini AI. Users can interac
 
 ## 📚 Study Notes
 
-This project was created during a learning event. You can also check out some personal study notes on HTML, CSS, JavaScript, and more in the [`study-notes`](./study-notes/web-fundamentals.md) folder.
+This project was created during the 20ª edition of Rocketseat's Next Level Week, which I used as a basis to create my own project. You can also check out some personal study notes on HTML, CSS, JavaScript, and more in the [`study-notes`](./study-notes/web-fundamentals.md) folder.
 
 ## 🧠 Author
 
