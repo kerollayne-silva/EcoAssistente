@@ -28,7 +28,7 @@ This project was created during a learning event. You can also check out some pe
 
 ## 📸 Preview
 
-*(Optional: You can add a screenshot or a gif here)*
+[EcoAssistente](https://kerollayne-silva.github.io/EcoAssistente/)
 
 ## 🧠 Author
 
