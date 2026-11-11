@@ -16,6 +16,8 @@ Ecoassistente is a Brazilian biome guide powered by Gemini AI. Users can interac
 3. Insert your Gemini API key
 4. Select a biome and start asking your questions!
 
+> 🔐 **Sobre a API key**: a chave digitada fica apenas no seu navegador (`sessionStorage`, válida enquanto a aba estiver aberta) e vai direto da sua máquina para a API do Gemini. Antes de publicar o site, restringa a chave por **HTTP referrer** no [Google AI Studio](https://aistudio.google.com/apikey) — nenhuma chave em front-end fica 100% escondida, a restrição é a proteção real.
+
 ## 💡 Features
 
 - Ask questions about Brazilian biomes

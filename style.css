@@ -142,6 +142,15 @@ button:disabled {
   opacity: 0.8;
 }
 
+#errorMessage {
+  background: rgba(120, 10, 10, 0.35);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid #e53935;
+  color: #ffc9c9;
+  margin-top: 1rem;
+}
+
 #aiResponse p, li {
   color: white;
 }

@@ -26,7 +26,7 @@
         <p>Descubra espécies, curiosidades e ameaças nos biomas brasileiros de forma interativa!</p>
 
         <form id="form">
-          <input id="apiKey" type="password" placeholder="Informe a API KEY do Gemini" required>
+          <input id="apiKey" type="password" placeholder="API KEY do Gemini (salva nesta sessão)" required>
 
           <select id="biomaSelect">
             <option value="">Selecione um bioma</option>
@@ -50,10 +50,13 @@
 
           </div>
         </div>
+
+        <div id="errorMessage" class="hidden"></div>
       </div>
     </section>
   </main>
   <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+  <script src="https://unpkg.com/dompurify@3/dist/purify.min.js"></script>
   <script src="./script.js"></script>
 </body>
 
