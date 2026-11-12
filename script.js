@@ -115,8 +115,8 @@ Aqui está a pergunta do usuário: ${pergunta}
 
 // FUNÇÃO PRINCIPAL
 const perguntarAI = async (question, bioma, apiKey) => {
-  const model = "gemini-2.0-flash"
-  const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
+  const model = "gemini-3.5-flash"
+  const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`
 
   const prompt = montarPrompt(question, bioma)
 
@@ -135,21 +135,25 @@ const perguntarAI = async (question, bioma, apiKey) => {
   })
 
   // fetch só rejeita em falha de rede; status 4xx/5xx chega "normal" aqui
+  const data = await response.json().catch(() => null)
+
   if (!response.ok) {
     if (response.status === 429) {
       throw new Error('Cota da API excedida. Aguarde alguns minutos e tente novamente.')
     }
-    throw new Error('API key inválida ou requisição rejeitada. Verifique a chave informada.')
+    const detalhe = data?.error?.message
+    throw new Error(`Erro HTTP ${response.status}${detalhe ? ` — ${detalhe}` : ''}`)
   }
 
-  const data = await response.json()
-
   // Em erro, a API devolve { error: {...} } e NÃO possui "candidates"
-  if (data.error) {
+  if (data?.error) {
     throw new Error(data.error.message || 'A API retornou um erro.')
   }
 
-  const texto = data.candidates?.[0]?.content?.parts?.[0]?.text
+  const texto = (data?.candidates?.[0]?.content?.parts ?? [])
+    .filter((part) => part.text && !part.thought)
+    .map((part) => part.text)
+    .join('')
   if (!texto) {
     throw new Error('O modelo não gerou resposta. Reformule a pergunta e tente novamente.')
   }

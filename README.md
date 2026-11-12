@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
-    <img src="https://img.shields.io/badge/Gemini-2.0%20Flash-4285F4?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini">
+    <img src="https://img.shields.io/badge/Gemini-3.5_Flash-4285F4?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini">
   </p>
 </div>
 
@@ -40,7 +40,7 @@
 ```mermaid
 flowchart LR
     A["📝 Usuário<br>pergunta + bioma"] --> B["🗂️ montarPrompt()<br>prompt único por bioma"]
-    B --> C["🌌 Gemini API<br>gemini-2.0-flash"]
+    B --> C["🌌 Gemini API<br>gemini-3.5-flash"]
     C --> D["🧼 DOMPurify<br>sanitiza o HTML"]
     D --> E["💬 UI<br>markdown renderizado"]
 ```
@@ -54,7 +54,7 @@ O projeto é **100% frontend — sem backend, sem build e sem `npm install`**: o
 | Estrutura | HTML5 |
 | Estilo | CSS3 (Flexbox + animações) |
 | Lógica | JavaScript vanilla — sem framework |
-| IA | [Gemini API](https://ai.google.dev/gemini-api/docs) — modelo `gemini-2.0-flash` |
+| IA | [Gemini API](https://ai.google.dev/gemini-api/docs) — modelo `gemini-3.5-flash` |
 | Markdown → HTML | [Showdown](https://github.com/showdownjs/showdown) |
 | Sanitização | [DOMPurify](https://github.com/cure53/DOMPurify) |
 
