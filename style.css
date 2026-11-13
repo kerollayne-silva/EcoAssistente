@@ -130,18 +130,6 @@ button:disabled {
   color: white;
 }
 
-#aiResponse {
-  background: rgba(11, 5, 5, 0.587);
-  border-radius: 0.5rem;
-  padding: 1.25rem;
-  border-left: 4px solid #0041c3;
-}
-
-#aiResponse ul {
-  padding-left: 1.5rem;
-  opacity: 0.8;
-}
-
 #errorMessage {
   background: rgba(120, 10, 10, 0.35);
   border-radius: 0.5rem;
@@ -151,16 +139,72 @@ button:disabled {
   margin-top: 1rem;
 }
 
-#aiResponse p, li {
-  color: white;
-}
-
 .loading {
   animation: pulse 1s infinite;
 }
 
 .hidden {
   display: none;
+}
+
+#chat {
+  background: rgba(11, 5, 5, 0.587);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  border-left: 4px solid #0041c3;
+  margin-top: 1rem;
+  max-height: 24rem;        /* altura máxima → rolagem interna */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  line-height: 1.5;
+}
+
+.msg.user {                  /* sua bolha: direita, verde do tema */
+  align-self: flex-end;
+  background: #189947;
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.msg.model {                 /* resposta: esquerda, azul do tema */
+  align-self: flex-start;
+  background: rgba(0, 65, 195, 0.35);
+  color: white;
+  border-bottom-left-radius: 0.25rem;
+}
+
+#chat ul { padding-left: 1.5rem; opacity: 0.8; }
+.msg p, .msg li { color: white; }
+
+.msg.typing {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-self: flex-start;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #ccc;
+  border-radius: 50%;
+  animation: pulse 1s infinite;   /* reaproveita o @keyframes que já existe */
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+#newChatButton {
+  background: transparent;
+  border: 1px solid #189947;
+  color: #189947;
+  margin-top: 1rem;
 }
 
 @keyframes pulse {

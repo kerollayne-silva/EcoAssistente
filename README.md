@@ -97,7 +97,6 @@ Este projeto nasceu num evento de aprendizado. As anotações sobre HTML, CSS, J
 
 ## 🗺️ Roadmap
 
-- [ ] **Fase 1 — Conversa multi-turno**: histórico de mensagens e chat com bolhas (hoje é pergunta única)
 - [ ] **Fase 2 — Modo agente** ⭐: Google Search grounding (respostas com dados atualizados) + function calling consultando bases reais de biodiversidade (GBIF e lista de espécies ameaçadas)
 - [ ] **Fase 3 — Qualidade**: testes automatizados, responsividade e melhorias de UX
 
